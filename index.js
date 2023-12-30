@@ -815,7 +815,7 @@ onValue(shiftListInDB, function(snapshotNote) {
             }
         } else {
             shiftSectionList.innerHTML = ""
-            shiftList.innerHTML = "No shift notes here... yet"
+            shiftList.innerHTML = "No daily task notes here... yet"
         }
     })
 })
@@ -2307,7 +2307,7 @@ onValue(archivedShiftListInDB, function(snapshotArchiveNote) {
             }
         } else {
             archivedShiftSectionList.innerHTML = ""
-            archivedShiftList.innerHTML = "No archived shift notes here..."
+            archivedShiftList.innerHTML = "No archived daily task notes here..."
         }
     })
 })
