@@ -627,3 +627,144 @@ option {
     word-break: break-all;
 } */
 
+
+
+
+
+
+
+
+@media all and (min-width: 0px) and (max-width: 900px) {
+    
+    /* typography */
+    
+    #title {
+        font-size: 35px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 18px; 
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px; 
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    
+
+
+
+
+    /* layout */
+
+    body {
+        padding: 25px;
+        padding-left: 35px;
+        padding-top: 35px;
+    }
+
+    #log-in-first {
+        padding-right: 10px;
+    }
+
+    .version2-wrapper {
+        display: flex; 
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    #info-img {
+        width: 32px; 
+        height: 32px; 
+        margin-top: 35px;
+    }
+
+    .LHS-section {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    .RHS-section {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .section-checkbox-toggle, .shift-section-checkbox-toggle, .template-section-checkbox-toggle {
+        width: 250px;
+    }
+
+    .section {
+        min-width: 200px; 
+        margin-right: 30px;
+    }
+
+    #password-information {
+        min-width: 300px;
+    }
+
+
+
+
+    #add-login-title {
+        margin-left: -20px;
+    }
+
+    #add-note-title {
+        margin-left: -20px;
+        width: 250px;
+    }
+
+    #add-shift-title {
+        margin-left: -20px;
+        width: 250px;
+    }
+
+    #add-general-note-title {
+        margin-left: -20px;
+        width: 250px;
+    }
+
+    #add-template-title {
+        margin-left: -20px;
+        width: 250px;
+    }
+
+
+
+    #note-input {
+        min-width: 250px;
+    }
+
+    #general-note-input {
+        min-width: 250px;
+    }
+
+    #shift-input {
+        min-width: 250px;
+    }
+
+    #template-input {
+        min-width: 250px;
+    }
+    
+}
