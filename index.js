@@ -1,6 +1,5 @@
 // const initialPassword = document.getElementById("initial-password")
 // const initialPasswordConfirmBtn = document.getElementById("enter-first-password")
-// const initialPasswordSet = "Riship10"
 // const mainWrapper = document.getElementById("main-wrapper")
 // const logInSection = document.getElementById("log-in-first")
 // let loggedIn = false
