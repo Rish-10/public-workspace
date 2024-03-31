@@ -1,0 +1,327 @@
+<html>
+    <head>
+        <title>Your Space</title>
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit = cover, maximum-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#1f2937">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="favicon_io/site.webmanifest">
+    </head>
+    <body>
+        <!-- <div id="log-in-first">
+            <h1 id="rishi-password">Rishi's Password:</h1>
+            <input id="initial-password" type="password" placeholder="Password">
+            <button id="enter-first-password">Enter</button>
+        </div> -->
+
+        <div id="main-wrapper">
+            <div id="top-header">
+                <h1 id="title">Your Space</h1>
+                <img src="images/info.png" id="info-img">
+            </div>
+
+            <div id="sub-main-wrapper">
+                <h1 id="saved-passwords-title">- Logins -</h1>
+                <div id="big-login-wrapper">
+                    <div class="disappear" id="login-wrapper">
+                        <div class="LHS-section">
+                            <div class="disappear" id="add-login-section">
+                                <div id="add-password">
+                                    <h2 id="add-login-title">Add Login</h2>
+                                    <div class="input-group" id="username-password">
+                                        <input type="text" class="input-field" id="platform-input" placeholder="Platform">
+                                        <input type="text" class="input-field" id="username-input" placeholder="Username">
+                                        <input type="text" class="input-field" id="password-input" placeholder="Password">
+                                    </div>
+
+                                    <button id="save-btn">Save</button>
+                                    <p id="warning-msg" class="disappear">Invalid Entry</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="RHS-section" style="overflow:scroll;height:80vh">
+                            <div id="saved-passwords">
+                                <h2>Logins</h2>
+                                <div id="big-password-wrapper">
+                                    <div id="saved-passwords-wrapper">
+                                        <div class="section" id="platform-information">
+                                            <h3 class="heading">Platform</h3>
+                                            <ul class="styling-logins" id="saved-platform-list"></ul>
+                                        </div>
+                                        <div class="section" id="username-information">
+                                            <h3 class="heading">Username</h3>
+                                            <ul class="styling-logins" id="saved-username-list"></ul>
+                                        </div>
+                                        <div class="section" id="password-information">
+                                            <h3 class="heading">Password</h3>
+                                            <ul class="styling-logins" id="saved-password-list"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="archived-logins">
+                                <h2 id="archived-passwords-title">Archive</h2>
+                                <div class="disappear" id="archived-password-wrapper">
+                                    <div class="disappear" id="archived-platform-information">
+                                        <h3 class="heading">Platform</h3>
+                                        <ul id="archived-platform-list"></ul>
+                                    </div>
+                                    <div class="disappear" id="archived-username-information">
+                                        <h3 class="heading">Username</h3>
+                                        <ul id="archived-username-list"></ul>
+                                    </div>
+                                    <div class="disappear" id="archived-password-information">
+                                        <h3 class="heading">Password</h3>
+                                        <ul id="archived-password-list"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h1 id="saved-notes-title">- Daily Tasks -</h1>
+                <div id="big-notes-wrapper">
+                    <div class="disappear" id="notes-wrapper">
+                        <div class="LHS-section">
+                            <div id="add-note">
+                                <h2 id="add-note-title">Add Note</h2>
+                                <textarea id="note-input" placeholder="Write your note here" onsubmit="document.body.style.zoom='100%'"></textarea>
+                                <h3 class="section-checkbox-toggle" id="add-note-section-checkbox">Add to Section</h3>
+                                <div class="disappear" id="note-section-options">
+                                    <input type="text" class="input-field" id="note-section-input" placeholder="Add New Section">
+                                    <div class="styled">
+                                        <select class="section-select" name="note-sections" id="notes-sections" size="5">
+                                        </select>
+                                    </div>
+                                </div>
+                                <button id="note-save-button" class="save-btn">Save</button>
+                                <p id="notes-warning-msg" class="disappear">Invalid Entry</p>
+                            </div>
+                        </div>
+
+                        <div class="RHS-section" style="overflow:scroll;height:80vh">
+                            <div id="saved-notes">
+                                <h2>Daily Tasks</h2>
+                                <div id="saved-notes-wrapper">
+                                    <ul id="section-list-wrapper"></ul>
+                                    <ul id="notes-list"></ul>
+                                </div>
+                            </div>
+
+                            <div id="archived-notes">
+                                <h2 id="archived-notes-title">Archive</h2>
+                                <div class="disappear" id="archived-notes-wrapper">
+                                    <ul id="archived-notes-list"></ul>
+                                    <ul id="archived-section-list-wrapper"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 id="saved-shift-title">- Notes / To-Do -</h1>
+                <div id="big-shift-wrapper">
+                    <div class="disappear" id="shift-wrapper">
+                        <div class="LHS-section">
+                            <div id="add-shift-section">
+                                <h2 id="add-shift-title">Add Note</h2>
+                                <textarea id="shift-input" placeholder="Write your note here" onsubmit="document.body.style.zoom='100%'"></textarea>
+                                <h3 class="shift-section-checkbox-toggle" id="add-shift-section-checkbox">Add to Section</h3>
+                                <div class="disappear" id="shift-section-options">
+                                    <input type="text" class="input-field" id="shift-section-input" placeholder="Add New Section">
+                                    <div class="styled">
+                                        <select class="section-select" name="shift-sections" id="shift-sections" size="5">
+                                        </select>
+                                    </div>
+                                </div>
+                                <button id="shift-save-button" class="save-btn">Save</button>
+                                <p id="shift-warning-msg" class="disappear">Invalid Entry</p>
+                            </div>
+                        </div>
+
+                        <div class="RHS-section" style="overflow:scroll;height:80vh">
+                            <div id="saved-shift">
+                                <h2>Notes</h2>
+                                <div id="saved-shift-wrapper">
+                                    <ul id="shift-section-list-wrapper"></ul>
+                                    <ul id="shift-list"></ul>
+                                </div>
+                            </div>
+
+                            <div id="archived-shift">
+                                <h2 id="archived-shift-title">Archive</h2>
+                                <div class="disappear" id="archived-shift-wrapper">
+                                    <ul id="archived-shift-list"></ul>
+                                    <ul id="archived-shift-section-list-wrapper"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h1 id="saved-general-title">- General Notes -</h1>
+                <div id="big-general-notes-wrapper">
+                    <div class="disappear" id="general-notes-wrapper">
+                        <div class="LHS-section">
+                            <div id="add-general-note-section">
+                                <h2 id="add-general-note-title">Add General Note</h2>
+                                <textarea id="general-note-input" placeholder="Write your note here" onsubmit="document.body.style.zoom='100%'"></textarea>
+                                <h3 class="section-checkbox-toggle" id="add-general-note-section-checkbox">Add to Section</h3>
+                                <div class="disappear" id="general-note-section-options">
+                                    <input type="text" class="input-field" id="general-note-section-input" placeholder="Add New Section">
+                                    <div class="styled">
+                                        <select class="section-select" name="general-note-sections" id="general-notes-sections" size="5">
+                                        </select>
+                                    </div>
+                                </div>
+                                <button id="general-note-save-button" class="save-btn">Save</button>
+                                <p id="general-notes-warning-msg" class="disappear">Invalid Entry</p>
+                            </div>
+                        </div>
+
+                        <div class="RHS-section" style="overflow:scroll;height:80vh">
+                            <div id="saved-general-notes">
+                                <h2>General Notes</h2>
+                                <div id="saved-general-notes-wrapper">
+                                    <ul id="general-section-list-wrapper"></ul>
+                                    <ul id="general-notes-list"></ul>
+                                </div>
+                            </div>
+
+                            <div id="archived-general-notes">
+                                <h2 id="archived-general-notes-title">Archive</h2>
+                                <div class="disappear" id="archived-general-notes-wrapper">
+                                    <ul id="archived-general-notes-list"></ul>
+                                    <ul id="archived-general-section-list-wrapper"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h1 id="saved-template-title">- Templates -</h1>
+                <div id="big-template-wrapper">
+                    <div class="disappear" id="template-wrapper">
+                        <div class="LHS-section">
+                            <div id="add-template-section">
+                                <h2 id="add-template-title">Add Template</h2>
+                                <textarea id="template-input" placeholder="Write your template here" onsubmit="document.body.style.zoom='100%'"></textarea>
+                                <h3 class="template-section-checkbox-toggle" id="add-template-section-checkbox">Add to Section</h3>
+                                <div class="disappear" id="template-section-options">
+                                    <input type="text" class="input-field" id="template-section-input" placeholder="Add New Section">
+                                    <div class="styled">
+                                        <select class="section-select" name="template-sections" id="template-sections" size="5">
+                                        </select>
+                                    </div>
+                                </div>
+                                <button id="template-save-button" class="save-btn">Save</button>
+                                <p id="template-warning-msg" class="disappear">Invalid Entry</p>
+                            </div>
+                        </div>
+
+                        <div class="RHS-section" style="overflow:scroll;height:80vh">
+                            <div id="saved-template">
+                                <h2>Templates</h2>
+                                <div id="saved-template-wrapper">
+                                    <ul id="template-section-list-wrapper"></ul>
+                                    <ul id="template-list"></ul>
+                                </div>
+                            </div>
+                            
+                            <div id="archived-template">
+                                <h2 id="archived-template-title">Archive</h2>
+                                <div class="disappear" id="archived-template-wrapper">
+                                    <ul id="archived-template-list"></ul>
+                                    <ul id="archived-template-section-list-wrapper"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="button-list" class="disappear"></div>
+            </div>
+
+
+            <div class="disappear" id="info-section">
+                <div class="info-section-section">
+                    <h2 class="big-title">Basics</h2>
+                    <p class="indent">This is a virtual space I designed and created, from scratch, to keep thoughts and notes while working for quick and easy access</p>
+                    <p class="indent">It is almost an online notebook with a few hidden features for you to find...</p>
+                    <p class="indent">For any note / information saved, clicking once will allow you to copy it throughout the site</p>
+                    <p class="indent">As you use it more, you'll find more features and shortcuts naturally</p>
+                    <p class="indent">If you have any issues or come across anything not working as its supposed to, let me know</p>
+                    <p class="indent">I hope you enjoy using the site!</p>
+                    <p class="indent">- Rishi</p>
+                </div>
+
+                <div class="info-section-section">
+                    <h2 class="big-title">Logins</h2>
+                    <p class="indent">A space where you can save your login details for quick and easy access</p>
+                    <p class="indent">Tap once: This will copy the information you click</p>
+                    <p class="indent">Tap twice: Clicking the platform value twice will move that login row to the Archive</p>
+                    <p class="indent">Once you are sure you don't want the login anymore, click the platform value twice in the Archive section to delete</p>
+                </div>
+
+                <div class="info-section-section">
+                    <h2 class="big-title">Daily Tasks</h2>
+                    <p class="indent">This is where you can document any notes or information about tasks you need to complete daily</p>
+                    <p class="indent">It can serve as a reminder / checklist, or include information for each task to refer to</p>
+                    <p class="indent">Tap Once: This will copy the note you clicked (It will maintain any line spaces you wrote originally)</p>
+                    <p class="indent">Tap Twice: Clicking the note twice will move it to the Archive</p>
+                    <p class="indent">Once you are sure you don't want the note anymore, click the note twice in the Archive section to delete</p>
+                </div>
+                
+                <div class="info-section-section">
+                    <h2 class="big-title">Notes</h2>
+                    <p class="indent">A space where you can note down what you need to do or store information to refer to in the future</p>
+                    <p class="indent">You can create notes either in the Notes / To-Do section or General Notes depending on your usage</p>
+                    <p class="indent">Tap Once: This will copy the note you clicked (It will maintain any line spaces you wrote originally)</p>
+                    <p class="indent">Tap Twice: Clicking the note twice will move it to the Archive</p>
+                    <p class="indent">Once you are sure you don't want the note anymore, click the note twice in the Archive section to delete</p>
+                </div>
+
+                <div class="info-section-section">
+                    <h2 class="big-title">Templates</h2>
+                    <p class="indent">A space where you can keep templates of emails or sms messages you send often</p>
+                    <p class="indent">Tap Once: This will copy the template you clicked (It will maintain any line spaces you wrote originally)</p>
+                    <p class="indent">Tap Twice: Clicking the template twice will move it to the Archive</p>
+                    <p class="indent">Once you are sure you don't want the template anymore, click the template twice in the Archive section to delete</p>
+                </div>
+
+                <div class="info-section-section">
+                    <h2 class="big-title">Sections</h2>
+                    <p class="indent">Sections are a feature I added with the ability to create sub-headings in the notes and templates categories</p>
+                    <p class="indent">They allow you to group notes and templates together and can be used repeatedly, even if you refresh the page or come back to it later</p>
+                    <p class="indent">If you are done working on that specific section / adding notes to it, you can double tap the section header to move all the notes to the archive</p>
+                    <p class="indent">If you accidently move it to the archive and want to recover it, simply double tap the section header again in the archive - we all make mistakes</p>
+                    <p class="indent">However, once you are sure you don't want the information in the section, in the archive, double tap each piece of info to delete it</p>
+                    <p class="indent">Once all the data within a section is deleted, the section header will also be deleted</p>
+                    <p class="indent">This provides a way of checking each piece of information before deleting, so that you avoid mistakenly deleting all items within a section</p>
+                </div>
+
+                <div class="info-section-section">
+                    <h2 class="big-title">The Archive</h2>
+                    <p class="indent">The archives act as a backup on this site, allowing you to recover any data you might've accidentally deleted</p>
+                    <p class="indent">When you move a note to the archive, by default it will be copied on your device's clipboard so if you want to recover it instantly you can re-enter it in the relevant category</p>
+                    <p class="indent">However, if you realise that you want something you deleted a while ago such that it is no longer copied, it will be in the Archive until you choose to delete it permanently</p>
+                    <p class="indent">Tap Once: If you tap any information in the Archive once, it will be copied and you can re-enter it into the relevant category</p>
+                    <p class="indent">Tap Twice: If you tap any information in the Archive twice, you will permanently delete it</p>
+                    <p class="indent">Although, it is worth noting that to speed things up, if you are recovering multiple notes from the Archive, you can double tap it, which will copy and delete it, and then paste to add it back again</p>
+                    <p class="indent">However, make sure that you definitely don't want the note because as soon as you double tap it will be deleted permanently</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
