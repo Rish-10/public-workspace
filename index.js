@@ -218,7 +218,7 @@ function render(platformStored, usernameStored, passwordStored) {
     let touchtime = 0
 
     platformEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -231,7 +231,7 @@ function render(platformStored, usernameStored, passwordStored) {
                 platformEl.innerHTML = `<p class='table-element' style="white-space: pre-line">${platformValue}</p>`
             }, 500)
 
-        } else if (((new Date().getTime()) - touchtime) < 800) {
+        } else if (((new Date().getTime()) - touchtime) < 600) {
             push(archivedPlatformListInDB, platformValue)
             push(archivedUsernameListInDB, usernameValue)
             push(archivedPasswordListInDB, passwordValue)
@@ -290,25 +290,63 @@ function render(platformStored, usernameStored, passwordStored) {
 
 
 
+let clickableLogin = document.getElementById("clickable-login-title")
+let clickableLoginToggle = 0
+clickableLogin.addEventListener('click', function() {
+    if (Math.min(window.screen.width, window.screen.height) < 768) {
+        if (clickableLoginToggle % 2 === 0) {
+            window.scrollTo({
+                top: document.getElementById("clickable-login-title").offsetTop - 75,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-passwords-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })
+        }
+        clickableLoginToggle += 1
+    }
+})
+
+
 let loginTitle = document.querySelector("#saved-passwords-title")
 let loginSection = document.querySelector("#login-wrapper")
 let addLoginSection = document.querySelector("#add-login-section")
 let addLoginToggle = 0
 
 loginTitle.addEventListener("click", function() {
+    clickableLoginToggle = 0 
     if (addLoginToggle % 2 === 0) {
         loginSection.className = "version2-wrapper"
         addLoginSection.className = ""
+
         if (Math.min(window.screen.width, window.screen.height) > 768) {
             platformInput.focus()
+            window.scrollTo({
+                top: document.getElementById("saved-passwords-title").offsetTop - 33,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-passwords-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })       
         }
-        addLoginToggle += 1
     } else {
         loginSection.className = "disappear"
         addLoginSection.className = "disappear" 
-        addLoginToggle += 1
+
+        window.scrollTo({
+            top: document.getElementById("top-header").offsetTop - 100,
+            behaviour: 'smooth', 
+        })
+
     }
+    addLoginToggle += 1
 })
+
+
 
 
 
@@ -456,23 +494,67 @@ function synchronizeTemplateWidths() {
 
 
 
+
+
+
+
+
+
+
+
 // NOTES SECTION:
+
+let clickableNotes = document.getElementById("clickable-notes-title")
+let clickableNotesToggle = 0
+clickableNotes.addEventListener('click', function() {
+    if (Math.min(window.screen.width, window.screen.height) < 768) {
+        if (clickableNotesToggle % 2 === 0) {
+            window.scrollTo({
+                top: document.getElementById("clickable-notes-title").offsetTop - 75,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-notes-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })
+        }
+        clickableNotesToggle += 1
+    }
+})
+
+
 
 let notesTitle = document.querySelector("#saved-notes-title")
 let notesSection = document.querySelector("#notes-wrapper")
 let addNotesToggle = 0
 
 notesTitle.addEventListener("click", function() {
+    clickableNotesToggle = 0 
     if (addNotesToggle % 2 === 0) {
         notesSection.className = "version2-wrapper"
-        addNotesToggle += 1
+
         if (Math.min(window.screen.width, window.screen.height) > 768) {
             noteInput.focus()
+            window.scrollTo({
+                top: document.getElementById("saved-notes-title").offsetTop - 32,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-notes-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })       
         }
     } else {
         notesSection.className = "disappear"
-        addNotesToggle += 1
+
+        window.scrollTo({
+            top: document.getElementById("top-header").offsetTop - 100,
+            behaviour: 'smooth', 
+        })
     }
+    addNotesToggle += 1
 })
 
 
@@ -734,7 +816,7 @@ function renderNotes(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -753,7 +835,7 @@ function renderNotes(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisSectionToggleCounter[index] = 0
 
                 if (noteDeleteHelper === 0) {
@@ -831,7 +913,7 @@ function renderNotes(noteStored, sectionStored) {
     let touchtime = 0 
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -950,21 +1032,57 @@ function renderNotes(noteStored, sectionStored) {
 
 // SHIFTS SECTION:
 
+let clickableShifts = document.getElementById("clickable-shifts-title")
+let clickableShiftsToggle = 0
+clickableShifts.addEventListener('click', function() {
+    if (Math.min(window.screen.width, window.screen.height) < 768) {
+        if (clickableShiftsToggle % 2 === 0) {
+            window.scrollTo({
+                top: document.getElementById("clickable-shifts-title").offsetTop - 75,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-shift-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })
+        }
+        clickableShiftsToggle += 1
+    }
+})
+
+
+
 let shiftTitle = document.querySelector("#saved-shift-title")
 let shiftSection = document.querySelector("#shift-wrapper")
 let shiftToggle = 0
 
 shiftTitle.addEventListener("click", function() {
+    clickableShiftsToggle = 0
     if (shiftToggle % 2 === 0) {
         shiftSection.className = "version2-wrapper"
-        shiftToggle += 1
+
         if (Math.min(window.screen.width, window.screen.height) > 768) {
             shiftInput.focus()
+            window.scrollTo({
+                top: document.getElementById("saved-shift-title").offsetTop - 32,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-shift-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })       
         }
     } else {
         shiftSection.className = "disappear"
-        shiftToggle += 1
+
+        window.scrollTo({
+            top: document.getElementById("top-header").offsetTop - 100,
+            behaviour: 'smooth', 
+        })
     }
+    shiftToggle += 1
 })
 
 
@@ -1131,7 +1249,7 @@ onValue(shiftListInDB, function(snapshotNote) {
             }
         } else {
             shiftSectionList.innerHTML = ""
-            shiftList.innerHTML = "No shift notes here... yet"
+            shiftList.innerHTML = "No meeting notes here... yet"
         }
     })
 })
@@ -1210,7 +1328,7 @@ function renderShifts(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -1229,7 +1347,7 @@ function renderShifts(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisShiftSectionToggleCounter[index] = 0
 
                 if (shiftDeleteHelper === 0) {
@@ -1264,7 +1382,7 @@ function renderShifts(noteStored, sectionStored) {
     let touchtime = 0 
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -1386,21 +1504,57 @@ function renderShifts(noteStored, sectionStored) {
 
 // GENERAL NOTES SECTION
 
+let clickableGeneralNotes = document.getElementById("clickable-general-notes-title")
+let clickableGeneralNotesToggle = 0
+clickableGeneralNotes.addEventListener('click', function() {
+    if (Math.min(window.screen.width, window.screen.height) < 768) {
+        if (clickableGeneralNotesToggle % 2 === 0) {
+            window.scrollTo({
+                top: document.getElementById("clickable-general-notes-title").offsetTop - 75,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-general-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })
+        }
+        clickableGeneralNotesToggle += 1
+    }
+})
+
+
+
 let generalTitle = document.querySelector("#saved-general-title")
 let generalSection = document.querySelector("#general-notes-wrapper")
 let generalToggle = 0
 
 generalTitle.addEventListener("click", function() {
+    clickableGeneralNotesToggle = 0
     if (generalToggle % 2 === 0) {
         generalSection.className = "version2-wrapper"
-        generalToggle += 1
+
         if (Math.min(window.screen.width, window.screen.height) > 768) {
             generalNoteInput.focus()
+            window.scrollTo({
+                top: document.getElementById("saved-general-title").offsetTop - 32,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-general-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })       
         }
     } else {
         generalSection.className = "disappear"
-        generalToggle += 1
+
+        window.scrollTo({
+            top: document.getElementById("top-header").offsetTop - 100,
+            behaviour: 'smooth', 
+        })
     }
+    generalToggle += 1
 })
 
 
@@ -1645,7 +1799,7 @@ function renderGeneralNotes(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -1664,7 +1818,7 @@ function renderGeneralNotes(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisGeneralSectionToggleCounter[index] = 0
 
                 if (generalNoteDeleteHelper === 0) {
@@ -1699,7 +1853,7 @@ function renderGeneralNotes(noteStored, sectionStored) {
     let touchtime = 0
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -1820,21 +1974,57 @@ function renderGeneralNotes(noteStored, sectionStored) {
 
 // Template Section
 
+let clickableTemplates = document.getElementById("clickable-templates-title")
+let clickableTemplatesToggle = 0
+clickableTemplates.addEventListener('click', function() {
+    if (Math.min(window.screen.width, window.screen.height) < 768) {
+        if (clickableTemplatesToggle % 2 === 0) {
+            window.scrollTo({
+                top: document.getElementById("clickable-templates-title").offsetTop - 75,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-template-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })
+        }
+        clickableTemplatesToggle += 1
+    }
+})
+
+
+
 let templateTitle = document.querySelector("#saved-template-title")
 let templateSection = document.querySelector("#template-wrapper")
 let templateToggle = 0
 
 templateTitle.addEventListener("click", function() {
+    clickableTemplatesToggle = 0
     if (templateToggle % 2 === 0) {
         templateSection.className = "version2-wrapper"
-        templateToggle += 1
+
         if (Math.min(window.screen.width, window.screen.height) > 768) {
             templateInput.focus()
+            window.scrollTo({
+                top: document.getElementById("saved-template-title").offsetTop - 32,
+                behaviour: 'smooth', 
+            })
+        } else {
+            window.scrollTo({
+                top: document.getElementById("saved-template-title").offsetTop - 50,
+                behaviour: 'smooth', 
+            })       
         }
     } else {
         templateSection.className = "disappear"
-        templateToggle += 1
+
+        window.scrollTo({
+            top: document.getElementById("top-header").offsetTop - 100,
+            behaviour: 'smooth', 
+        })
     }
+    templateToggle += 1
 })
 
 
@@ -2079,7 +2269,7 @@ function renderTemplates(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -2098,7 +2288,7 @@ function renderTemplates(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisTemplateSectionToggleCounter[index] = 0
 
                 if (templateDeleteHelper === 0) {
@@ -2133,7 +2323,7 @@ function renderTemplates(noteStored, sectionStored) {
     let touchtime = 0
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -2426,7 +2616,7 @@ function renderArchive(platformStored, usernameStored, passwordStored) {
     let touchtime = 0
 
     archivedPlatformEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -2439,7 +2629,7 @@ function renderArchive(platformStored, usernameStored, passwordStored) {
                 archivedPlatformEl.innerHTML = `<p class='table-element' style="white-space: pre-line">${platformValue}</p>`
             }, 500)
 
-        } else if (((new Date().getTime()) - touchtime) < 800) {
+        } else if (((new Date().getTime()) - touchtime) < 600) {
             let exactLocationOfArchivedPlatformInDB = ref(database, `archivedPlatformList/${platformID}`)
             let exactLocationOfArchivedUsernameInDB = ref(database, `archivedUsernameList/${usernameID}`)
             let exactLocationOfArchivedPasswordInDB = ref(database, `archivedPasswordList/${passwordID}`)
@@ -2630,7 +2820,7 @@ function renderArchiveNotes(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -2649,7 +2839,7 @@ function renderArchiveNotes(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisArchiveSectionToggleCounter[index] = 0
 
                 if (archiveNoteDeleteHelper === 0) {
@@ -2726,7 +2916,7 @@ function renderArchiveNotes(noteStored, sectionStored) {
     let touchtime = 0 
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -2739,7 +2929,7 @@ function renderArchiveNotes(noteStored, sectionStored) {
                 newEl.innerHTML = `<p style="white-space: pre-line">${noteValue}</p>`
             }, 500)
 
-        } else if (((new Date().getTime()) - touchtime) < 800) {
+        } else if (((new Date().getTime()) - touchtime) < 600) {
             let exactLocationOfNoteInDB = ref(database, `archiveNoteList/${noteID}`)
             remove(exactLocationOfNoteInDB)
 
@@ -2894,7 +3084,7 @@ onValue(archivedShiftListInDB, function(snapshotArchiveNote) {
             }
         } else {
             archivedShiftSectionList.innerHTML = ""
-            archivedShiftList.innerHTML = "No archived shift notes here..."
+            archivedShiftList.innerHTML = "No archived meeting notes here..."
         }
     })
 })
@@ -2967,7 +3157,7 @@ function renderArchiveShift(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -2986,7 +3176,7 @@ function renderArchiveShift(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisArchiveShiftSectionToggleCounter[index] = 0
 
                 if (archiveShiftDeleteHelper === 0) {
@@ -3021,7 +3211,7 @@ function renderArchiveShift(noteStored, sectionStored) {
     let touchtime = 0
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -3034,7 +3224,7 @@ function renderArchiveShift(noteStored, sectionStored) {
                 newEl.innerHTML = `<p style="white-space: pre-line">${noteValue}</p>`
             }, 500)
 
-        } else if (((new Date().getTime()) - touchtime) < 800) {
+        } else if (((new Date().getTime()) - touchtime) < 600) {
             let exactLocationOfNoteInDB = ref(database, `archivedShiftList/${noteID}`)
             remove(exactLocationOfNoteInDB)
 
@@ -3264,7 +3454,7 @@ function renderArchiveGeneralNotes(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -3283,7 +3473,7 @@ function renderArchiveGeneralNotes(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisArchiveGeneralSectionToggleCounter[index] = 0
 
                 if (archiveGeneralNoteDeleteHelper === 0) {
@@ -3318,7 +3508,7 @@ function renderArchiveGeneralNotes(noteStored, sectionStored) {
     let touchtime = 0
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -3331,7 +3521,7 @@ function renderArchiveGeneralNotes(noteStored, sectionStored) {
                 newEl.innerHTML = `<p style="white-space: pre-line">${noteValue}</p>`
             }, 500)
 
-        } else if (((new Date().getTime()) - touchtime) < 800) {
+        } else if (((new Date().getTime()) - touchtime) < 600) {
             let exactLocationOfNoteInDB = ref(database, `archivedGeneralNoteList/${noteID}`)
             remove(exactLocationOfNoteInDB)
 
@@ -3566,7 +3756,7 @@ function renderArchiveTemplates(noteStored, sectionStored) {
         let sectiontouchtime = 0
 
         sectionHeader.onclick = event => {
-            if (((new Date().getTime()) - sectiontouchtime) > 800) {
+            if (((new Date().getTime()) - sectiontouchtime) > 600) {
                 sectiontouchtime = 0 
             }
     
@@ -3585,7 +3775,7 @@ function renderArchiveTemplates(noteStored, sectionStored) {
                     }
                 }
     
-            } else if (((new Date().getTime()) - sectiontouchtime) < 800) {
+            } else if (((new Date().getTime()) - sectiontouchtime) < 600) {
                 thisArchiveTemplateSectionToggleCounter[index] = 0
 
                 if (archiveTemplateDeleteHelper === 0) {
@@ -3620,7 +3810,7 @@ function renderArchiveTemplates(noteStored, sectionStored) {
     let touchtime = 0
 
     newEl.onclick = event => {
-        if (((new Date().getTime()) - touchtime) > 800) {
+        if (((new Date().getTime()) - touchtime) > 600) {
             touchtime = 0 
         }
 
@@ -3633,7 +3823,7 @@ function renderArchiveTemplates(noteStored, sectionStored) {
                 newEl.innerHTML = `<p style="white-space: pre-line">${noteValue}</p>`
             }, 500)
 
-        } else if (((new Date().getTime()) - touchtime) < 800) {
+        } else if (((new Date().getTime()) - touchtime) < 600) {
             let exactLocationOfNoteInDB = ref(database, `archivedTemplateList/${noteID}`)
             remove(exactLocationOfNoteInDB)
 

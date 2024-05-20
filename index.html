@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Your Space</title>
+        <title>My Space</title>
         <link rel="stylesheet" href="index.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit = cover, maximum-scale=1.0">
         <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
         <div id="main-wrapper">
             <div id="top-header">
-                <h1 id="title">Your Space</h1>
+                <h1 id="title">My Space</h1>
                 <img src="images/info.png" id="info-img">
             </div>
 
@@ -45,7 +45,7 @@
 
                         <div class="RHS-section" style="overflow:scroll;height:80vh">
                             <div id="saved-passwords">
-                                <h2>Logins</h2>
+                                <h2 id="clickable-login-title">Logins</h2>
                                 <div id="big-password-wrapper">
                                     <div id="saved-passwords-wrapper">
                                         <div class="section" id="platform-information">
@@ -86,9 +86,9 @@
                 </div>
 
 
-                <h1 id="saved-notes-title">- Daily Tasks -</h1>
+                <h1 id="saved-notes-title">- Notes / To-Do -</h1>
                 <div id="big-notes-wrapper">
-                    <div class="disappear" id="notes-wrapper">
+                    <div class="disappear" id="notes-wrapper"> <!-- class name goes to .version2-wrapper -->
                         <div class="LHS-section">
                             <div id="add-note">
                                 <h2 id="add-note-title">Add Note</h2>
@@ -108,7 +108,7 @@
 
                         <div class="RHS-section" style="overflow:scroll;height:80vh">
                             <div id="saved-notes">
-                                <h2>Daily Tasks</h2>
+                                <h2 id="clickable-notes-title">Notes</h2>
                                 <div id="saved-notes-wrapper">
                                     <ul id="section-list-wrapper"></ul>
                                     <ul id="notes-list"></ul>
@@ -126,7 +126,7 @@
                     </div>
                 </div>
 
-                <h1 id="saved-shift-title">- Notes / To-Do -</h1>
+                <h1 id="saved-shift-title">- Meeting Notes -</h1>
                 <div id="big-shift-wrapper">
                     <div class="disappear" id="shift-wrapper">
                         <div class="LHS-section">
@@ -148,7 +148,7 @@
 
                         <div class="RHS-section" style="overflow:scroll;height:80vh">
                             <div id="saved-shift">
-                                <h2>Notes</h2>
+                                <h2 id="clickable-shifts-title">Meeting Notes</h2>
                                 <div id="saved-shift-wrapper">
                                     <ul id="shift-section-list-wrapper"></ul>
                                     <ul id="shift-list"></ul>
@@ -189,7 +189,7 @@
 
                         <div class="RHS-section" style="overflow:scroll;height:80vh">
                             <div id="saved-general-notes">
-                                <h2>General Notes</h2>
+                                <h2 id="clickable-general-notes-title">General Notes</h2>
                                 <div id="saved-general-notes-wrapper">
                                     <ul id="general-section-list-wrapper"></ul>
                                     <ul id="general-notes-list"></ul>
@@ -230,7 +230,7 @@
 
                         <div class="RHS-section" style="overflow:scroll;height:80vh">
                             <div id="saved-template">
-                                <h2>Templates</h2>
+                                <h2 id="clickable-templates-title">Templates</h2>
                                 <div id="saved-template-wrapper">
                                     <ul id="template-section-list-wrapper"></ul>
                                     <ul id="template-list"></ul>
@@ -271,20 +271,11 @@
                     <p class="indent">Tap twice: Clicking the platform value twice will move that login row to the Archive</p>
                     <p class="indent">Once you are sure you don't want the login anymore, click the platform value twice in the Archive section to delete</p>
                 </div>
-
-                <div class="info-section-section">
-                    <h2 class="big-title">Daily Tasks</h2>
-                    <p class="indent">This is where you can document any notes or information about tasks you need to complete daily</p>
-                    <p class="indent">It can serve as a reminder / checklist, or include information for each task to refer to</p>
-                    <p class="indent">Tap Once: This will copy the note you clicked (It will maintain any line spaces you wrote originally)</p>
-                    <p class="indent">Tap Twice: Clicking the note twice will move it to the Archive</p>
-                    <p class="indent">Once you are sure you don't want the note anymore, click the note twice in the Archive section to delete</p>
-                </div>
                 
                 <div class="info-section-section">
                     <h2 class="big-title">Notes</h2>
                     <p class="indent">A space where you can note down what you need to do or store information to refer to in the future</p>
-                    <p class="indent">You can create notes either in the Notes / To-Do section or General Notes depending on your usage</p>
+                    <p class="indent">You can create notes either in the Notes / To-Do, Meeting Notes or General Notes sections depending on your usage</p>
                     <p class="indent">Tap Once: This will copy the note you clicked (It will maintain any line spaces you wrote originally)</p>
                     <p class="indent">Tap Twice: Clicking the note twice will move it to the Archive</p>
                     <p class="indent">Once you are sure you don't want the note anymore, click the note twice in the Archive section to delete</p>
